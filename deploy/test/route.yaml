@@ -1,0 +1,13 @@
+apiVersion: cirrus.ibm.com/v1alpha1
+kind: Route
+metadata:
+  name: my-app-pipeline-test-route
+spec:
+  to:
+    kind: Application
+    name: my-app-pipeline-test
+  port:
+    targetPort: https
+  tls:
+    termination: passthrough
+  host: my-app-pipeline-test.dal.cirrus.ibm.com

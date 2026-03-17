@@ -1,0 +1,39 @@
+apiVersion: cirrus.ibm.com/v1alpha1
+kind: Application
+metadata:
+  name: my-app-pipeline-production
+spec:
+  replicas: 1
+  quota: q1gb
+  envFrom:
+    - secretRef:
+        name: Niranjan-test
+  livenessProbe:
+    httpGet:
+      path: /health
+      port: 8443
+      scheme: HTTPS
+    periodSeconds: 60
+    timeoutSeconds: 30
+  readinessProbe:
+    httpGet:
+      path: /health
+      port: 8443
+      scheme: HTTPS
+    periodSeconds: 60
+    timeoutSeconds: 30
+    failureThreshold: 6
+  startupProbe:
+    httpGet:
+      path: /health
+      port: 8443
+      scheme: HTTPS
+    periodSeconds: 60
+    failureThreshold: 6
+  additionalServicePorts:
+    - name: https
+      port: 443
+      protocol: TCP
+      targetPort: 8443
+  mountServiceCerts:
+    mountPath: /workspace/cloned-git-repository/certs
