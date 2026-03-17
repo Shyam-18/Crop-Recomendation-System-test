@@ -10,7 +10,7 @@ build:
     install-packages-ci: git-all wget gcc libpq-devel
     cirrus-pipeline-name: my-app-pipeline
     cirrus-project-name: dp-cont
-    cirrus-region: dal-containers
+    cirrus-region: wdc-containers
     mcp-enabled: true
 release:
   environments:
@@ -20,4 +20,3 @@ release:
       deploy-verification-memory-request: q1gb
     - name: production
       deploy-verification-memory-request: q1gb
-jiraProjectName: nir-pro

@@ -10,4 +10,4 @@ spec:
     targetPort: https
   tls:
     termination: passthrough
-  host: my-app-pipeline-test.dal.cirrus.ibm.com
+  host: my-app-pipeline-test.wdc.cirrus.ibm.com
