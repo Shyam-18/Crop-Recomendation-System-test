@@ -1,13 +1,13 @@
 apiVersion: cirrus.ibm.com/v1alpha1
 kind: Route
 metadata:
-  name: my-app-pipeline-production-route
+  name: zeus-server-production-route
 spec:
   to:
     kind: Application
-    name: my-app-pipeline-production
+    name: zeus-server-production
   port:
     targetPort: https
   tls:
     termination: passthrough
-  host: my-app-pipeline-production.dal.cirrus.ibm.com
+  host: zeus-server-production.dal.cirrus.ibm.com

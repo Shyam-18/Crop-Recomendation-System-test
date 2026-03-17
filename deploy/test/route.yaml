@@ -1,13 +1,13 @@
 apiVersion: cirrus.ibm.com/v1alpha1
 kind: Route
 metadata:
-  name: my-app-pipeline-test-route
+  name: zeus-server-test-route
 spec:
   to:
     kind: Application
-    name: my-app-pipeline-test
+    name: zeus-server-test
   port:
     targetPort: https
   tls:
     termination: passthrough
-  host: my-app-pipeline-test.dal.cirrus.ibm.com
+  host: zeus-server-test.dal.cirrus.ibm.com

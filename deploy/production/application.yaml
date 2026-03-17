@@ -1,13 +1,13 @@
 apiVersion: cirrus.ibm.com/v1alpha1
 kind: Application
 metadata:
-  name: my-app-pipeline-production
+  name: zeus-server-production
 spec:
   replicas: 1
   quota: q1gb
   envFrom:
     - secretRef:
-        name: Niranjan-test
+        name: zeus-server-test
   livenessProbe:
     httpGet:
       path: /health

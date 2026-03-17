@@ -1,6 +1,6 @@
 apiVersion: automation.cio/v1alpha1
 kind: RepositoryConfig
-ealImapNumber: AS000111
+ealImapNumber: APM0064442
 build:
   strategy: container-release
   pipeline: python-v3.11-micropipenv-container-image
@@ -8,8 +8,8 @@ build:
   config:
     install-packages-app: git-all wget gcc libpq-devel
     install-packages-ci: git-all wget gcc libpq-devel
-    cirrus-pipeline-name: my-app-pipeline
-    cirrus-project-name: dp-cont
+    cirrus-pipeline-name: zeus-server
+    cirrus-project-name: zeus-server-test
     cirrus-region: dal-containers
     mcp-enabled: true
 release:
@@ -20,4 +20,3 @@ release:
       deploy-verification-memory-request: q1gb
     - name: production
       deploy-verification-memory-request: q1gb
-jiraProjectName: nir-pro
